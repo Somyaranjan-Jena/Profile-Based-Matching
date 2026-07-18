@@ -253,11 +253,17 @@ flowchart TD
 
 ## 📸 Screenshots
 
-| Screen | Suggested file |
-| --- | --- |
-| Home / selected profile | `images/home.png` |
-| Top recommendations | `images/recommendations.png` |
-| Match-details breakdown | `images/details.png` |
+### Home / Selected Profile
+
+![Home screen with a selected profile](images/home.png)
+
+### Top Recommendations
+
+![Top profile recommendations](images/recommendations.png)
+
+### Match Details
+
+![Match-details score breakdown](images/details.png)
 
 ## 🔮 Future Improvements
 
@@ -284,4 +290,3 @@ No license file is currently included in this repository. Add a `LICENSE` file t
 ## 👤 Author
 
 Developed as a Machine Learning major project.
-
