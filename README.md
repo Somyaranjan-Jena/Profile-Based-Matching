@@ -253,8 +253,6 @@ flowchart TD
 
 ## 📸 Screenshots
 
-Screenshots have not been added to this repository yet. Add project images here when available:
-
 | Screen | Suggested file |
 | --- | --- |
 | Home / selected profile | `images/home.png` |
