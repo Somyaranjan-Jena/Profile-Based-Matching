@@ -1,7 +1,41 @@
 import re
-import spacy
 
-nlp = spacy.load("en_core_web_sm")
+try:
+    import spacy
+except ModuleNotFoundError:
+    spacy = None
+
+if spacy is not None:
+    try:
+        nlp = spacy.load("en_core_web_sm")
+    except OSError:
+        nlp = None
+else:
+    nlp = None
+
+STOP_WORDS = {
+    "a",
+    "an",
+    "and",
+    "are",
+    "as",
+    "at",
+    "be",
+    "by",
+    "for",
+    "from",
+    "i",
+    "in",
+    "is",
+    "it",
+    "of",
+    "on",
+    "or",
+    "the",
+    "to",
+    "with",
+}
+
 
 def clean_text(text):
     if text is None:
@@ -12,6 +46,13 @@ def clean_text(text):
     text = re.sub(r"http\S+", "", text)
     text = re.sub(r"[^a-zA-Z\s]", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
+
+    if nlp is None:
+        return " ".join(
+            word
+            for word in text.split()
+            if word not in STOP_WORDS
+        )
 
     doc = nlp(text)
 
